@@ -1,0 +1,84 @@
+<!DOCTYPE html> 
+<html> <head> 
+<title>Nav 2</title> 
+<meta charset="UTF-8"> 
+<meta name="description" content="Navigation 2"> 
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<link href="CSS/styles.css" rel="stylesheet" type="text/css"> 
+
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .nav {
+            background: #070067;
+            height: 70px;
+        }
+
+        svg {
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100vh;
+            background: #182aa3;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .mobile-nav li {
+            list-style: none;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .mobile-nav a {
+            text-decoration: none;
+            font-size: 2rem;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="nav">
+    <svg id="open-btn" width="40" height="30">
+        <line x1="5" y1="5" x2="35" y2="5" stroke="white" stroke-width="4"/>
+        <line x1="5" y1="15" x2="35" y2="15" stroke="white" stroke-width="4"/>
+        <line x1="5" y1="25" x2="35" y2="25" stroke="white" stroke-width="4"/>
+    </svg>
+</div>
+
+<div class="mobile-nav">
+    <ol>
+    <li><a href="#" id="close-btn">X</a></li>
+    <li><a href="index.html">Nav 1</a></li>
+    <li><a href="nav2.html">Nav 2</a></li>
+    <li><a href="nav3.html">Nav 3</a></li>
+    </ol>
+</div>
+
+<script>
+    const openBtn = document.getElementById('open-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    openBtn.addEventListener('click', () => {
+        mobileNav.style.width = "100vw";
+    });
+
+    closeBtn.addEventListener('click', () => {
+        mobileNav.style.width = "0";
+    });
+</script>
+
+</body>
+</html>
